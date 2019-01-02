@@ -46,7 +46,7 @@ public:
             QDir lib(QCoreApplication::applicationDirPath());
             lib.cd(QLatin1String("../lib"));
             QString toReplace = lib.path();
-            lib.cd(QLatin1String("qtcreator"));
+            lib.cd(QLatin1String("qtcverilog"));
             toReplace.append(QLatin1Char(':'));
             toReplace.append(lib.path());
 

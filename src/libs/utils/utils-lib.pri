@@ -4,13 +4,17 @@ dll {
     DEFINES += QTCREATOR_UTILS_STATIC_LIB
 }
 
-QT += gui network qml
+QT += gui network 
 
 CONFIG += exceptions # used by portlist.cpp, textfileformat.cpp, and ssh/*
 
 win32: LIBS += -luser32 -lshell32
 # PortsGatherer
 win32: LIBS += -liphlpapi -lws2_32
+
+#    $$PWD/templateengine.cpp \
+#    $$PWD/templateengine.h \
+
 
 SOURCES += $$PWD/environment.cpp \
     $$PWD/environmentmodel.cpp \
@@ -20,7 +24,6 @@ SOURCES += $$PWD/environment.cpp \
     $$PWD/shellcommandpage.cpp \
     $$PWD/settingsselector.cpp \
     $$PWD/stringutils.cpp \
-    $$PWD/templateengine.cpp \
     $$PWD/textfieldcheckbox.cpp \
     $$PWD/textfieldcombobox.cpp \
     $$PWD/filesearch.cpp \
@@ -112,7 +115,6 @@ HEADERS += \
     $$PWD/shellcommand.h \
     $$PWD/shellcommandpage.h \
     $$PWD/stringutils.h \
-    $$PWD/templateengine.h \
     $$PWD/textfieldcheckbox.h \
     $$PWD/textfieldcombobox.h \
     $$PWD/filesearch.h \

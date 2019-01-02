@@ -68,7 +68,7 @@ using namespace ExtensionSystem;
 
 enum { OptionIndent = 4, DescriptionIndent = 34 };
 
-const char appNameC[] = "Qt Creator";
+const char appNameC[] = "QtcVerilog";
 const char corePluginNameC[] = "Core";
 const char fixedOptionsC[] =
 " [OPTION]... [FILE]...\n"
@@ -225,7 +225,7 @@ static inline QStringList getPluginPaths()
         pluginPath = rootDirPath;
         pluginPath += QLatin1Char('/');
         pluginPath += QLatin1String(IDE_LIBRARY_BASENAME);
-        pluginPath += QLatin1String("/qtcreator/plugins");
+        pluginPath += QLatin1String("/qtcverilog/plugins");
         rc.push_back(pluginPath);
     }
     // 3) <localappdata>/plugins/<ideversion>
@@ -240,7 +240,7 @@ static inline QStringList getPluginPaths()
     pluginPath += QLatin1Char('/')
             + QLatin1String(Core::Constants::IDE_SETTINGSVARIANT_STR)
             + QLatin1Char('/');
-    pluginPath += QLatin1String(Utils::HostOsInfo::isMacHost() ? "Qt Creator" : "qtcreator");
+    pluginPath += QLatin1String("QtcVerilog");
     pluginPath += QLatin1String("/plugins/");
     pluginPath += QLatin1String(Core::Constants::IDE_VERSION_LONG);
     rc.push_back(pluginPath);
@@ -251,7 +251,7 @@ static QSettings *createUserSettings()
 {
     return new QSettings(QSettings::IniFormat, QSettings::UserScope,
                          QLatin1String(Core::Constants::IDE_SETTINGSVARIANT_STR),
-                         QLatin1String("QtCreator"));
+                         QLatin1String("QtcVerilog"));
 }
 
 static inline QSettings *userSettings()
@@ -286,9 +286,9 @@ static inline QSettings *userSettings()
                 || lowerFile.startsWith(QLatin1String("qtversion.xml"))
                 || lowerFile.startsWith(QLatin1String("devices.xml"))
                 || lowerFile.startsWith(QLatin1String("debuggers.xml"))
-                || lowerFile.startsWith(QLatin1String("qtcreator.")))
+                || lowerFile.startsWith(QLatin1String("qtcverilog.")))
             QFile::copy(srcDir.absoluteFilePath(file), destDir.absoluteFilePath(file));
-        if (file == QLatin1String("qtcreator"))
+        if (file == QLatin1String("qtcverilog"))
             copyRecursively(srcDir.absoluteFilePath(file), destDir.absoluteFilePath(file));
     }
 
@@ -298,7 +298,7 @@ static inline QSettings *userSettings()
 }
 
 static const char *SHARE_PATH =
-        Utils::HostOsInfo::isMacHost() ? "/../Resources" : "/../share/qtcreator";
+        Utils::HostOsInfo::isMacHost() ? "/../Resources" : "/../share/qtcverilog";
 
 int main(int argc, char **argv)
 {
@@ -383,7 +383,7 @@ int main(int argc, char **argv)
 
     QSettings *globalSettings = new QSettings(QSettings::IniFormat, QSettings::SystemScope,
                                               QLatin1String(Core::Constants::IDE_SETTINGSVARIANT_STR),
-                                              QLatin1String("QtCreator"));
+                                              QLatin1String("QtcVerilog"));
     PluginManager pluginManager;
     PluginManager::setPluginIID(QLatin1String("org.qt-project.Qt.QtCreatorPlugin"));
     PluginManager::setGlobalSettings(globalSettings);

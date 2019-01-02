@@ -139,7 +139,7 @@ bool ConsoleProcess::start(const QString &program, const QString &args)
              << msgPromptToClose();
 
     const QString cmdLine = createWinCommandline(
-            QCoreApplication::applicationDirPath() + QLatin1String("/qtcreator_process_stub.exe"), stubArgs);
+            QCoreApplication::applicationDirPath() + QLatin1String("/qtcverilog_process_stub.exe"), stubArgs);
 
     bool success = CreateProcessW(0, (WCHAR*)cmdLine.utf16(),
                                   0, 0, FALSE, CREATE_NEW_CONSOLE,

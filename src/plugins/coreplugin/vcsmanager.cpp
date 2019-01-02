@@ -39,7 +39,7 @@
 #include <coreplugin/editormanager/editormanager.h>
 #include <coreplugin/editormanager/ieditor.h>
 
-#include <vcsbase/vcsbaseconstants.h>
+// RK #include <vcsbase/vcsbaseconstants.h>
 #include <extensionsystem/pluginmanager.h>
 #include <utils/algorithm.h>
 #include <utils/qtcassert.h>

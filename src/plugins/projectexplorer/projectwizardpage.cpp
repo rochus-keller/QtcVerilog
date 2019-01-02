@@ -44,7 +44,7 @@
 #include <utils/stringutils.h>
 #include <utils/treemodel.h>
 #include <utils/wizard.h>
-#include <vcsbase/vcsbaseconstants.h>
+// RK #include <vcsbase/vcsbaseconstants.h>
 
 #include <QDir>
 #include <QTextStream>
@@ -602,7 +602,8 @@ void ProjectWizardPage::projectChanged(int index)
 
 void ProjectWizardPage::manageVcs()
 {
-    ICore::showOptionsDialog(VcsBase::Constants::VCS_COMMON_SETTINGS_ID, this);
+    qWarning() << "ProjectWizardPage::manageVcs not implemented";
+    // RK ICore::showOptionsDialog(VcsBase::Constants::VCS_COMMON_SETTINGS_ID, this);
 }
 
 void ProjectWizardPage::hideVersionControlUiElements()

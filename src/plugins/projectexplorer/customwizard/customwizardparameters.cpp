@@ -32,7 +32,7 @@
 #include "customwizardscriptgenerator.h"
 
 #include <coreplugin/icore.h>
-#include <cpptools/cpptoolsconstants.h>
+// RK #include <cpptools/cpptoolsconstants.h>
 
 #include <utils/mimetypes/mimedatabase.h>
 #include <utils/macroexpander.h>
@@ -46,7 +46,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QIcon>
-#include <QJSEngine>
+// RK #include <QJSEngine>
 #include <QTemporaryFile>
 #include <QTime>
 #include <QXmlStreamAttribute>
@@ -178,6 +178,8 @@ bool CustomWizardValidationRule::validateRules(const QList<CustomWizardValidatio
     errorMessage->clear();
     if (rules.isEmpty())
         return true;
+    /*
+    // RK
     QJSEngine engine;
     foreach (const CustomWizardValidationRule &rule, rules)
     if (!rule.validate(engine, replacementMap)) {
@@ -185,6 +187,7 @@ bool CustomWizardValidationRule::validateRules(const QList<CustomWizardValidatio
         CustomWizardContext::replaceFields(replacementMap, errorMessage);
         return false;
     }
+    */
     return true;
 }
 
@@ -193,6 +196,9 @@ bool CustomWizardValidationRule::validate(QJSEngine &engine, const QMap<QString,
     // Apply parameters and evaluate using JavaScript
     QString cond = condition;
     CustomWizardContext::replaceFields(replacementMap, &cond);
+    qWarning() << "CustomWizardValidationRule::validate no JS available";
+    /*
+    // RK
     bool valid = false;
     QString errorMessage;
     if (!Utils::TemplateEngine::evaluateBooleanJavaScriptExpression(engine, cond, &valid, &errorMessage)) {
@@ -201,6 +207,8 @@ bool CustomWizardValidationRule::validate(QJSEngine &engine, const QMap<QString,
         return false;
     }
     return valid;
+    */
+    return true;
 }
 
 CustomWizardParameters::CustomWizardParameters() :
@@ -917,12 +925,15 @@ void CustomWizardContext::reset()
     const QTime currentTime = QTime::currentTime();
     baseReplacements.clear();
     Utils::MimeDatabase mdb;
+    /*
+    // RK
     baseReplacements.insert(QLatin1String("CppSourceSuffix"),
                             mdb.mimeTypeForName(QLatin1String(CppTools::Constants::CPP_SOURCE_MIMETYPE))
                             .preferredSuffix());
     baseReplacements.insert(QLatin1String("CppHeaderSuffix"),
                             mdb.mimeTypeForName(QLatin1String(CppTools::Constants::CPP_HEADER_MIMETYPE))
                             .preferredSuffix());
+                            */
     baseReplacements.insert(QLatin1String("CurrentDate"),
                             currentDate.toString(Qt::ISODate));
     baseReplacements.insert(QLatin1String("CurrentTime"),
@@ -954,12 +965,16 @@ QString CustomWizardContext::processFile(const FieldReplacementMap &fm, QString 
         replaceFields(fm, &in);
 
     QString out;
+    qWarning() << "CustomWizardContext::processFile no JS engine available";
+    /*
+    // RK
     QString errorMessage;
     if (!Utils::TemplateEngine::preprocessText(in, &out, &errorMessage)) {
         qWarning("Error preprocessing custom widget file: %s\nFile:\n%s",
                  qPrintable(errorMessage), qPrintable(in));
         return QString();
     }
+    */
     return out;
 }
 

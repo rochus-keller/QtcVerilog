@@ -165,8 +165,12 @@ Core::GeneratedFiles JsonWizardFileGenerator::fileList(Utils::MacroExpander *exp
                 });
                 nested.registerExtraResolver([expander](QString n, QString *ret) { return expander->resolveMacro(n, ret); });
 
+                qWarning() << "JsonWizardFileGenerator::fileList no JS engine available";
+                /*
+                // RK
                 gf.setContents(Utils::TemplateEngine::processText(&nested, QString::fromUtf8(reader.data()),
                                                                   errorMessage));
+                                                                  */
                 if (!errorMessage->isEmpty()) {
                     *errorMessage = QCoreApplication::translate("ProjectExplorer::JsonWizard", "When processing \"%1\":<br>%2")
                             .arg(sourcePath, *errorMessage);

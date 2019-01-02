@@ -1,9 +1,10 @@
 !isEmpty(QTCREATOR_PRI_INCLUDED):error("qtcreator.pri already included")
 QTCREATOR_PRI_INCLUDED = 1
 
-QTCREATOR_VERSION = 3.6.1
+QTCREATOR_VERSION = 3.6.2
 QTCREATOR_COMPAT_VERSION = 3.6.0
 BINARY_ARTIFACTS_BRANCH = 3.6
+QTC_VERILOG = yes
 
 # enable c++11
 CONFIG += c++11
@@ -76,7 +77,7 @@ isEmpty(IDE_BUILD_TREE) {
 
 IDE_APP_PATH = $$IDE_BUILD_TREE/bin
 osx {
-    IDE_APP_TARGET   = "Qt Creator"
+    IDE_APP_TARGET   = "QtcVerilog"
 
     IDE_APP_BUNDLE = $$IDE_APP_PATH/$${IDE_APP_TARGET}.app
 
@@ -95,33 +96,33 @@ osx {
     LINK_PLUGIN_PATH  = $$IDE_APP_BUNDLE/Contents/PlugIns
 } else {
     contains(TEMPLATE, vc.*):vcproj = 1
-    IDE_APP_TARGET   = qtcreator
+    IDE_APP_TARGET   = QtcVerilog
 
     # target output path if not set manually
     isEmpty(IDE_OUTPUT_PATH): IDE_OUTPUT_PATH = $$IDE_BUILD_TREE
 
-    IDE_LIBRARY_PATH = $$IDE_OUTPUT_PATH/$$IDE_LIBRARY_BASENAME/qtcreator
+    IDE_LIBRARY_PATH = $$IDE_OUTPUT_PATH/$$IDE_LIBRARY_BASENAME/qtcverilog
     IDE_PLUGIN_PATH  = $$IDE_LIBRARY_PATH/plugins
-    IDE_DATA_PATH    = $$IDE_OUTPUT_PATH/share/qtcreator
-    IDE_DOC_PATH     = $$IDE_OUTPUT_PATH/share/doc/qtcreator
+    IDE_DATA_PATH    = $$IDE_OUTPUT_PATH/share/qtcverilog
+    IDE_DOC_PATH     = $$IDE_OUTPUT_PATH/share/doc/qtcverilog
     IDE_BIN_PATH     = $$IDE_OUTPUT_PATH/bin
     win32: \
         IDE_LIBEXEC_PATH = $$IDE_OUTPUT_PATH/bin
     else: \
-        IDE_LIBEXEC_PATH = $$IDE_OUTPUT_PATH/libexec/qtcreator
+        IDE_LIBEXEC_PATH = $$IDE_OUTPUT_PATH/libexec/qtcverilog
     !isEqual(IDE_SOURCE_TREE, $$IDE_OUTPUT_PATH):copydata = 1
 
-    LINK_LIBRARY_PATH = $$IDE_BUILD_TREE/$$IDE_LIBRARY_BASENAME/qtcreator
+    LINK_LIBRARY_PATH = $$IDE_BUILD_TREE/$$IDE_LIBRARY_BASENAME/qtcverilog
     LINK_PLUGIN_PATH  = $$LINK_LIBRARY_PATH/plugins
 
-    INSTALL_LIBRARY_PATH = $$QTC_PREFIX/$$IDE_LIBRARY_BASENAME/qtcreator
+    INSTALL_LIBRARY_PATH = $$QTC_PREFIX/$$IDE_LIBRARY_BASENAME/qtcverilog
     INSTALL_PLUGIN_PATH  = $$INSTALL_LIBRARY_PATH/plugins
     win32: \
         INSTALL_LIBEXEC_PATH = $$QTC_PREFIX/bin
     else: \
-        INSTALL_LIBEXEC_PATH = $$QTC_PREFIX/libexec/qtcreator
-    INSTALL_DATA_PATH    = $$QTC_PREFIX/share/qtcreator
-    INSTALL_DOC_PATH     = $$QTC_PREFIX/share/doc/qtcreator
+        INSTALL_LIBEXEC_PATH = $$QTC_PREFIX/libexec/qtcverilog
+    INSTALL_DATA_PATH    = $$QTC_PREFIX/share/qtcverilog
+    INSTALL_DOC_PATH     = $$QTC_PREFIX/share/doc/qtcverilog
     INSTALL_BIN_PATH     = $$QTC_PREFIX/bin
 }
 
@@ -143,6 +144,8 @@ CONFIG += \
 
 LIBS *= -L$$LINK_LIBRARY_PATH  # Qt Creator libraries
 exists($$IDE_LIBRARY_PATH): LIBS *= -L$$IDE_LIBRARY_PATH  # library path from output path
+
+#message( LINK_LIBRARY_PATH $$LINK_LIBRARY_PATH IDE_LIBRARY_PATH $$IDE_LIBRARY_PATH )
 
 !isEmpty(vcproj) {
     DEFINES += IDE_LIBRARY_BASENAME=\"$$IDE_LIBRARY_BASENAME\"

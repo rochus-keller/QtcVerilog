@@ -3,7 +3,7 @@ QT += \
     help \
     network \
     printsupport \
-    qml \
+#    qml \
     sql
 
 # embedding build time information prevents repeatedly binary exact versions from same source code

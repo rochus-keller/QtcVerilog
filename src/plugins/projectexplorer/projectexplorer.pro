@@ -1,4 +1,4 @@
-QT += quick qml
+# RK QT += quick qml
 
 include(../../qtcreatorplugin.pri)
 include(customwizard/customwizard.pri)

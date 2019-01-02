@@ -114,14 +114,15 @@ MainWindow::MainWindow() :
     m_coreImpl(new ICore(this)),
     m_lowPrioAdditionalContexts(Constants::C_GLOBAL),
     m_settingsDatabase(new SettingsDatabase(QFileInfo(PluginManager::settings()->fileName()).path(),
-                                            QLatin1String("QtCreator"),
+                                            QLatin1String("QtcVerilog"),
                                             this)),
     m_printer(0),
     m_windowSupport(0),
     m_editorManager(0),
     m_externalToolManager(0),
     m_progressManager(new ProgressManagerPrivate),
-    m_jsExpander(new JsExpander),
+    // RK m_jsExpander(new JsExpander),
+    m_jsExpander(0),
     m_vcsManager(new VcsManager),
     m_statusBarManager(0),
     m_modeManager(0),
@@ -151,10 +152,10 @@ MainWindow::MainWindow() :
 
     HistoryCompleter::setSettings(PluginManager::settings());
 
-    setWindowTitle(tr("Qt Creator"));
+    setWindowTitle(tr("QtcVerilog"));
     if (HostOsInfo::isLinuxHost())
         QApplication::setWindowIcon(QIcon(QLatin1String(Constants::ICON_QTLOGO_128)));
-    QCoreApplication::setApplicationName(QLatin1String("QtCreator"));
+    QCoreApplication::setApplicationName(QLatin1String("QtcVerilog"));
     QCoreApplication::setApplicationVersion(QLatin1String(Constants::IDE_VERSION_LONG));
     QCoreApplication::setOrganizationName(QLatin1String(Constants::IDE_SETTINGSVARIANT_STR));
     QString baseName = QApplication::style()->objectName();
@@ -720,9 +721,9 @@ void MainWindow::registerDefaultActions()
     // About IDE Action
     icon = QIcon::fromTheme(QLatin1String("help-about"));
     if (HostOsInfo::isMacHost())
-        tmpaction = new QAction(icon, tr("About &Qt Creator"), this); // it's convention not to add dots to the about menu
+        tmpaction = new QAction(icon, tr("About &QtcVerilog"), this); // it's convention not to add dots to the about menu
     else
-        tmpaction = new QAction(icon, tr("About &Qt Creator..."), this);
+        tmpaction = new QAction(icon, tr("About &QtcVerilog..."), this);
     tmpaction->setMenuRole(QAction::AboutRole);
     cmd = ActionManager::registerAction(tmpaction, Constants::ABOUT_QTCREATOR);
     mhelp->addAction(cmd, Constants::G_HELP_ABOUT);

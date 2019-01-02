@@ -241,9 +241,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleExecutable</key>
-	<string>Qt Creator</string>
+        <string>QtcVerilog</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.qt-project.qtcreator</string>
+        <string>org.qt-project.qtcverilog</string>
 	<key>CFBundleVersion</key>
 	<string>$$QTCREATOR_VERSION</string>
 	<key>CFBundleShortVersionString</key>

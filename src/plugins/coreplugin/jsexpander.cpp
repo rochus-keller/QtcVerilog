@@ -37,7 +37,6 @@
 
 #include <QCoreApplication>
 #include <QDebug>
-#include <QJSEngine>
 
 namespace Core {
 
@@ -45,7 +44,6 @@ namespace Internal {
 
 class JsExpanderPrivate {
 public:
-    QJSEngine m_engine;
 };
 
 } // namespace Internal
@@ -54,53 +52,18 @@ static Internal::JsExpanderPrivate *d;
 
 void JsExpander::registerQObjectForJs(const QString &name, QObject *obj)
 {
-    QJSValue jsObj = d->m_engine.newQObject(obj);
-    d->m_engine.globalObject().setProperty(name, jsObj);
+    qWarning() << "JsExpander::registerQObjectForJs not implemented"; // RK
 }
 
 QString JsExpander::evaluate(const QString &expression, QString *errorMessage)
 {
-    QJSValue value = d->m_engine.evaluate(expression);
-    if (value.isError()) {
-        const QString msg = QCoreApplication::translate("Core::JsExpander", "Error in \"%1\": %2")
-                .arg(expression, value.toString());
-        if (errorMessage)
-            *errorMessage = msg;
-        return QString();
-    }
-    // Try to convert to bool, be that an int or whatever.
-    if (value.isBool())
-        return value.toString();
-    if (value.isNumber())
-        return QString::number(value.toNumber());
-    if (value.isString())
-        return value.toString();
-    QString msg = QCoreApplication::translate("Core::JsExpander",
-                                              "Cannot convert result of \"%1\" to string.").arg(expression);
-    if (errorMessage)
-        *errorMessage = msg;
+    qWarning() << "JsExpander::evaluate not implemented"; // RK
     return QString();
 }
 
 JsExpander::JsExpander()
 {
     d = new Internal::JsExpanderPrivate;
-    Utils::globalMacroExpander()->registerPrefix("JS",
-        QCoreApplication::translate("Core::JsExpander",
-                                    "Evaluate simple JavaScript statements.<br>"
-                                    "The statements may not contain '{' nor '}' characters."),
-        [this](QString in) -> QString {
-            QString errorMessage;
-            QString result = JsExpander::evaluate(in, &errorMessage);
-            if (!errorMessage.isEmpty()) {
-                qWarning() << errorMessage;
-                return errorMessage;
-            } else {
-                return result;
-            }
-        });
-
-    registerQObjectForJs(QLatin1String("Util"), new Internal::UtilsJsExtension);
 }
 
 JsExpander::~JsExpander()

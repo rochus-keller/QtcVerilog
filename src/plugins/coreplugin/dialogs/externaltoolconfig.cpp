@@ -136,7 +136,7 @@ QMimeData *ExternalToolModel::mimeData(const QModelIndexList &indexes) const
     QByteArray ba;
     QDataStream stream(&ba, QIODevice::WriteOnly);
     stream << category << m_tools.value(category).indexOf(tool);
-    md->setData(QLatin1String("application/qtcreator-externaltool-config"), ba);
+    md->setData(QLatin1String("application/qtcverilog-externaltool-config"), ba);
     return md;
 }
 
@@ -152,7 +152,7 @@ bool ExternalToolModel::dropMimeData(const QMimeData *data,
     bool found;
     QString toCategory = categoryForIndex(parent, &found);
     QTC_ASSERT(found, return false);
-    QByteArray ba = data->data(QLatin1String("application/qtcreator-externaltool-config"));
+    QByteArray ba = data->data(QLatin1String("application/qtcverilog-externaltool-config"));
     if (ba.isEmpty())
         return false;
     QDataStream stream(&ba, QIODevice::ReadOnly);
@@ -175,7 +175,7 @@ bool ExternalToolModel::dropMimeData(const QMimeData *data,
 
 QStringList ExternalToolModel::mimeTypes() const
 {
-    return QStringList() << QLatin1String("application/qtcreator-externaltool-config");
+    return QStringList() << QLatin1String("application/qtcverilog-externaltool-config");
 }
 
 QModelIndex ExternalToolModel::index(int row, int column, const QModelIndex &parent) const

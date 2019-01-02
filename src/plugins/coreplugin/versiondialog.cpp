@@ -54,7 +54,7 @@ VersionDialog::VersionDialog(QWidget *parent)
     if (Utils::HostOsInfo::isLinuxHost())
         setWindowIcon(QIcon(QLatin1String(Constants::ICON_QTLOGO_128)));
 
-    setWindowTitle(tr("About Qt Creator"));
+    setWindowTitle(tr("About QtcVerilog"));
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     QGridLayout *layout = new QGridLayout(this);
     layout->setSizeConstraint(QLayout::SetFixedSize);
@@ -82,6 +82,9 @@ VersionDialog::VersionDialog(QWidget *parent)
         "%5"
         "<br/>"
         "Copyright 2008-%6 %7. All rights reserved.<br/>"
+        "Modifications 2019 for QtcVerilog by Rochus Keller, "
+                "go to <a href='https://github.com/rochus-keller/QtcVerilog/'>Github</a> or "
+                "mail to <a href='mailto:me@rochus-keller.ch'>me@rochus-keller.ch</a>.<br/>"
         "<br/>"
         "The program is provided AS IS with NO WARRANTY OF ANY KIND, "
         "INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A "

@@ -197,9 +197,9 @@ Snippet::ParsedSnippet Snippet::parse(const QString &snippet)
     Snippet::ParsedSnippet result;
 
     QString errorMessage;
-    QString preprocessedSnippet
-            = Utils::TemplateEngine::processText(Utils::globalMacroExpander(), snippet,
-                                                 &errorMessage);
+    QString preprocessedSnippet = snippet;
+// RK            = Utils::TemplateEngine::processText(Utils::globalMacroExpander(), snippet,
+// RK                                                 &errorMessage);
 
     result.success = errorMessage.isEmpty();
     if (!result.success) {

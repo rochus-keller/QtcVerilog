@@ -87,7 +87,7 @@ void HostOsInfo::unsetOverrideFileNameCaseSensitivity()
 
 bool HostOsInfo::canCreateOpenGLContext(QString *errorMessage)
 {
-    static const bool canCreate = QOpenGLContext().create();
+    static const bool canCreate = false; // RK QOpenGLContext().create();
     if (!canCreate)
         *errorMessage = QApplication::translate("Utils::HostOsInfo",
                                                 "Cannot create OpenGL context.");

@@ -1642,7 +1642,7 @@ void EditorManagerPrivate::updateWindowTitleForDocument(IDocument *document, QWi
         windowTitle.append(dashSep);
     }
 
-    windowTitle.append(tr("Qt Creator"));
+    windowTitle.append(tr("QtcVerilog"));
     window->window()->setWindowTitle(windowTitle);
     window->window()->setWindowFilePath(filePath);
 

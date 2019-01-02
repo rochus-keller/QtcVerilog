@@ -403,7 +403,7 @@ QString ICore::userInterfaceLanguage()
 QString ICore::resourcePath()
 {
     const QString sharePath = QLatin1String(Utils::HostOsInfo::isMacHost()
-                                            ? "/../Resources" : "/../share/qtcreator");
+                                            ? "/../Resources" : "/../share/qtcverilog");
     return QDir::cleanPath(QCoreApplication::applicationDirPath() + sharePath);
 }
 
@@ -411,7 +411,7 @@ QString ICore::userResourcePath()
 {
     // Create qtcreator dir if it doesn't yet exist
     const QString configDir = QFileInfo(settings(QSettings::UserScope)->fileName()).path();
-    const QString urp = configDir + QLatin1String("/qtcreator");
+    const QString urp = configDir + QLatin1String("/qtcverilog");
 
     if (!QFileInfo::exists(urp + QLatin1Char('/'))) {
         QDir dir;
@@ -446,7 +446,7 @@ QString ICore::libexecPath()
     case Utils::OsTypeLinux:
     case Utils::OsTypeOtherUnix:
     case Utils::OsTypeOther:
-        path = QCoreApplication::applicationDirPath() + QLatin1String("/../libexec/qtcreator");
+        path = QCoreApplication::applicationDirPath() + QLatin1String("/../libexec/qtcverilog");
         break;
     }
     return QDir::cleanPath(path);
@@ -482,13 +482,13 @@ QString ICore::versionString()
 #ifdef IDE_VERSION_DESCRIPTION
     ideVersionDescription = tr(" (%1)").arg(QLatin1String(Constants::IDE_VERSION_DESCRIPTION_STR));
 #endif
-    return tr("Qt Creator %1%2").arg(QLatin1String(Constants::IDE_VERSION_LONG),
+    return tr("QtcVerilog %1%2").arg(QLatin1String(Constants::IDE_VERSION_LONG),
                                      ideVersionDescription);
 }
 
 QString ICore::buildCompatibilityString()
 {
-    return tr("Based on Qt %1 (%2, %3 bit)").arg(QLatin1String(qVersion()),
+    return tr("Based on QtCreator 3.6.1 and Qt %1 (%2, %3 bit)").arg(QLatin1String(qVersion()),
                                                  compilerString(),
                                                  QString::number(QSysInfo::WordSize));
 }

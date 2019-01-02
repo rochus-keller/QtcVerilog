@@ -4,7 +4,7 @@ CONFIG          -= qt app_bundle
 include(../../../qtcreator.pri)
 
 TEMPLATE        = app
-TARGET          = qtcreator_process_stub
+TARGET          = qtcverilog_process_stub
 DESTDIR         = $$IDE_LIBEXEC_PATH
 
 build_all:!build_pass {

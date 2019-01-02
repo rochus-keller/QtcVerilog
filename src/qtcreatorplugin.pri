@@ -51,14 +51,14 @@ isEmpty(USE_USER_DESTDIR) {
     DESTDIR = $$IDE_PLUGIN_PATH
 } else {
     win32 {
-        DESTDIRAPPNAME = "qtcreator"
+        DESTDIRAPPNAME = "qtcverilog"
         DESTDIRBASE = "$$(LOCALAPPDATA)"
         isEmpty(DESTDIRBASE):DESTDIRBASE="$$(USERPROFILE)\Local Settings\Application Data"
     } else:macx {
-        DESTDIRAPPNAME = "Qt Creator"
+        DESTDIRAPPNAME = "QtcVerilog"
         DESTDIRBASE = "$$(HOME)/Library/Application Support"
     } else:unix {
-        DESTDIRAPPNAME = "qtcreator"
+        DESTDIRAPPNAME = "qtcverilog"
         DESTDIRBASE = "$$(XDG_DATA_HOME)"
         isEmpty(DESTDIRBASE):DESTDIRBASE = "$$(HOME)/.local/share/data"
         else:DESTDIRBASE = "$$DESTDIRBASE/data"

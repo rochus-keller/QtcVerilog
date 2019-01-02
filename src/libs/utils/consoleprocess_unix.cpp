@@ -152,7 +152,7 @@ bool ConsoleProcess::start(const QString &program, const QString &args)
     }
 
     const QString stubPath = QCoreApplication::applicationDirPath()
-            + QLatin1String("/" QTC_REL_TOOLS_PATH "/qtcreator_process_stub");
+            + QLatin1String("/" QTC_REL_TOOLS_PATH "/qtcverilog_process_stub");
     QStringList allArgs = xtermArgs.toUnixArgs();
     allArgs << stubPath
               << modeOption(d->m_mode)

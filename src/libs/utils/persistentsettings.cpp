@@ -69,7 +69,7 @@ static QRect stringToRectangle(const QString &v)
 
     Handles all string-serializable simple types and QVariantList and QVariantMap. Example:
     \code
-<qtcreator>
+<qtcverilog>
     <data>
         <variable>ProjectExplorer.Project.ActiveTarget</variable>
         <value type="int">0</value>
@@ -122,7 +122,7 @@ struct Context // Basic context containing element name string constants.
 };
 
 Context::Context() :
-    qtCreatorElement(QLatin1String("qtcreator")),
+    qtCreatorElement(QLatin1String("qtcverilog")),
     dataElement(QLatin1String("data")),
     variableElement(QLatin1String("variable")),
     typeAttribute(QLatin1String("type")),
