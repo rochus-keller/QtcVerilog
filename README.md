@@ -1,7 +1,7 @@
 ![icon](http://software.rochus-keller.info/VerilogCreator_100.png)
 ## Welcome to QtcVerilog 
 
-QtcVerilog is a stand-allone Verilog IDE featuring the [VerilogCreator](https://github.com/rochus-keller/VerilogCreator) plugin. The primary purpose of QtcVerilog is to simplify the deployment of VerilogCreator and avoid compatibility issues with QtCreator's unstable plugin API.
+QtcVerilog is a stand-alone Verilog IDE featuring the [VerilogCreator](https://github.com/rochus-keller/VerilogCreator) plugin. The primary purpose of QtcVerilog is to simplify the deployment of VerilogCreator and to avoid compatibility issues with QtCreator's unstable plugin API.
 
 QtcVerilog is a subset of [QtCreator 3.6.1](https://download.qt.io/official_releases/qtcreator/3.6/3.6.1/). The subset was slightly modified to get a minimal version of QtCreator only including the Core, Texteditor, Projectexplorer and VerilogCreator plugins. To avoid interferences with existing QtCreator installations the executable is called QtcVerilog instead of qtcreator; the same applies to the configurations and corresponding directories.
 
