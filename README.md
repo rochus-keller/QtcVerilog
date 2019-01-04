@@ -21,10 +21,9 @@ The Linux version does not include the Qt binaries. It was compiled on Ubuntu 14
 
 Windows: http://software.rochus-keller.info/QtcVerilog_win32.zip
 
+Mac: http://software.rochus-keller.info/QtcVerilog_mac_x86_64.dmg
+
 The Windows and Mac versions include a copy of the Qt libraries. 
-
-Mac version is coming soon.
-
 
 ### Build Steps
 Follow these steps if you want to build QtcVerilog yourself:
