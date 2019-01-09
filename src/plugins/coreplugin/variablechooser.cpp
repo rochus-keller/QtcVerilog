@@ -408,7 +408,8 @@ void VariableChooser::addSupportForChildWidgets(QWidget *parent, MacroExpander *
  */
 void VariableChooserPrivate::updateDescription(const QModelIndex &index)
 {
-    m_variableDescription->setText(m_model.data(index, Qt::ToolTipRole).toString());
+    if( index.isValid() ) // avoid crash on Win and Mac
+        m_variableDescription->setText(m_model.data(index, Qt::ToolTipRole).toString());
 }
 
 /*!

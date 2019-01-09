@@ -7,21 +7,21 @@ SUBDIRS   = \
     texteditor \
 #    cppeditor \
 #    bineditor \
-#    diffeditor \
+#    diffeditor \ # check
 #    imageviewer \
-#    bookmarks \
+#    bookmarks \  # check
      projectexplorer \
-#    vcsbase \
+#    vcsbase \ # check
 #    perforce \
 #    subversion \
-#    git \
+#    git \ # check
 #    cvs \
 #    cpptools \
 #    qtsupport \
 #    qmakeprojectmanager \
 #    debugger \
 #    help \
-#    cpaster \
+#    cpaster \ # check
 #    cmakeprojectmanager \
 #    autotoolsprojectmanager \
 #    fakevim \
@@ -36,7 +36,7 @@ SUBDIRS   = \
 #    mercurial \
 #    bazaar \
 #    classview \
-#    tasklist \
+#    tasklist \ # check
 #    analyzerbase \
 #    qmljstools \
 #    macros \
