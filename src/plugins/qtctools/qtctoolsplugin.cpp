@@ -1,5 +1,6 @@
 #include "qtctoolsplugin.h"
 #include "qtctoolsconstants.h"
+#include "customexecutablerunconfiguration.h"
 
 #include <coreplugin/icore.h>
 #include <coreplugin/icontext.h>
@@ -40,16 +41,7 @@ bool QtcToolsPlugin::initialize(const QStringList &arguments, QString *errorStri
     Q_UNUSED(arguments)
     Q_UNUSED(errorString)
 
-    QAction *action = new QAction(tr("QtcTools action"), this);
-    Core::Command *cmd = Core::ActionManager::registerAction(action, Constants::ACTION_ID,
-                                                             Core::Context(Core::Constants::C_GLOBAL));
-    cmd->setDefaultKeySequence(QKeySequence(tr("Ctrl+Alt+Meta+A")));
-    connect(action, SIGNAL(triggered()), this, SLOT(triggerAction()));
-
-    Core::ActionContainer *menu = Core::ActionManager::createMenu(Constants::MENU_ID);
-    menu->menu()->setTitle(tr("QtcTools"));
-    menu->addAction(cmd);
-    Core::ActionManager::actionContainer(Core::Constants::M_TOOLS)->addMenu(menu);
+    addAutoReleasedObject(new QtcTools::CustomExecutableRunConfigurationFactory);
 
     return true;
 }
@@ -69,10 +61,5 @@ ExtensionSystem::IPlugin::ShutdownFlag QtcToolsPlugin::aboutToShutdown()
     return SynchronousShutdown;
 }
 
-void QtcToolsPlugin::triggerAction()
-{
-    QMessageBox::information(Core::ICore::mainWindow(),
-                             tr("Action triggered"),
-                             tr("This is an action from QtcTools."));
-}
+
 

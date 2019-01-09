@@ -49,7 +49,7 @@
 
 using namespace ProjectExplorer;
 
-namespace QtSupport {
+namespace QtcTools {
 namespace Internal {
 
 CustomExecutableConfigurationWidget::CustomExecutableConfigurationWidget(CustomExecutableRunConfiguration *rc, ApplyMode mode)
@@ -189,4 +189,4 @@ bool CustomExecutableConfigurationWidget::isValid() const
 }
 
 } // namespace Internal
-} // namespace QtSupport
+} // namespace QtcTools

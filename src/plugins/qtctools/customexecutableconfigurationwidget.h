@@ -51,7 +51,7 @@ class ArgumentsAspect;
 class TerminalAspect;
 }
 
-namespace QtSupport {
+namespace QtcTools {
 class CustomExecutableRunConfiguration;
 
 namespace Internal {
@@ -89,6 +89,6 @@ private:
 };
 
 } // namespace Internal
-} // namespace QtSupport
+} // namespace QtcTools
 
 #endif // CUSTOMEXECUTABLECONFIGURATIONWIDGET_H

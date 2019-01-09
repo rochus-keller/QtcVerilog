@@ -30,7 +30,7 @@
 
 #include "customexecutablerunconfiguration.h"
 #include "customexecutableconfigurationwidget.h"
-#include "qtkitinformation.h"
+//#include "qtkitinformation.h"
 
 #include <projectexplorer/buildconfiguration.h>
 #include <projectexplorer/localenvironmentaspect.h>
@@ -49,11 +49,12 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QKeyEvent>
 
 #include <QDir>
 
-using namespace QtSupport;
-using namespace QtSupport::Internal;
+using namespace QtcTools;
+using namespace QtcTools::Internal;
 using namespace ProjectExplorer;
 
 namespace {

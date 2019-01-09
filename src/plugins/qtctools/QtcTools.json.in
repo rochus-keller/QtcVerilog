@@ -1,7 +1,7 @@
 {
     \"Name\" : \"QtcTools\",
-    \"Version\" : \"3.6.1\",
-    \"CompatVersion\" : \"3.6.1\",
+    \"Version\" : \"$$QTCREATOR_VERSION\",
+    \"CompatVersion\" : \"$$QTCREATOR_COMPAT_VERSION\",
     \"Vendor\" : \"Rochus Keller\",
     \"Copyright\" : \"The Qt Company Ltd, Rochus Keller\",
     \"License\" : \"LGPL\",

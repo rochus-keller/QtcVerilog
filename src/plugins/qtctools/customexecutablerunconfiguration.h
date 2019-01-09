@@ -31,7 +31,7 @@
 #ifndef CUSTOMEXECUTABLERUNCONFIGURATION_H
 #define CUSTOMEXECUTABLERUNCONFIGURATION_H
 
-#include "qtsupport_global.h"
+#include "qtctools_global.h"
 
 #include <projectexplorer/localapplicationrunconfiguration.h>
 
@@ -39,12 +39,12 @@
 
 namespace ProjectExplorer { class Target; }
 
-namespace QtSupport {
+namespace QtcTools {
 namespace Internal { class CustomExecutableConfigurationWidget; }
 
 class CustomExecutableRunConfigurationFactory;
 
-class QTSUPPORT_EXPORT CustomExecutableRunConfiguration : public ProjectExplorer::LocalApplicationRunConfiguration
+class CustomExecutableRunConfiguration : public ProjectExplorer::LocalApplicationRunConfiguration
 {
     Q_OBJECT
     // the configuration widget needs to setExecutable setWorkingDirectory and setCommandLineArguments
@@ -131,6 +131,6 @@ private:
                                                  const QVariantMap &map);
 };
 
-} // namespace QtSupport
+} // namespace QtcTools
 
 #endif // CUSTOMEXECUTABLERUNCONFIGURATION_H
