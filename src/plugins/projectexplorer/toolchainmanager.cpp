@@ -49,7 +49,7 @@
 static const char TOOLCHAIN_DATA_KEY[] = "ToolChain.";
 static const char TOOLCHAIN_COUNT_KEY[] = "ToolChain.Count";
 static const char TOOLCHAIN_FILE_VERSION_KEY[] = "Version";
-static const char TOOLCHAIN_FILENAME[] = "/qtcreator/toolchains.xml";
+static const char TOOLCHAIN_FILENAME[] = "/qtcverilog/toolchains.xml";
 
 using namespace Utils;
 

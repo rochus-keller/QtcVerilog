@@ -59,7 +59,7 @@ const char KIT_DATA_KEY[] = "Profile.";
 const char KIT_COUNT_KEY[] = "Profile.Count";
 const char KIT_FILE_VERSION_KEY[] = "Version";
 const char KIT_DEFAULT_KEY[] = "Profile.Default";
-const char KIT_FILENAME[] = "/qtcreator/profiles.xml";
+const char KIT_FILENAME[] = "/qtcverilog/profiles.xml";
 
 static FileName settingsFileName()
 {

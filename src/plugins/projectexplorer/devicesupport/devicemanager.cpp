@@ -153,7 +153,7 @@ void DeviceManager::load()
     Utils::PersistentSettingsReader reader;
     // read devices file from global settings path
     QList<IDevice::Ptr> sdkDevices;
-    if (reader.load(systemSettingsFilePath(QLatin1String("/qtcreator/devices.xml"))))
+    if (reader.load(systemSettingsFilePath(QLatin1String("/qtcverilog/devices.xml"))))
         sdkDevices = fromMap(reader.restoreValues().value(QLatin1String(DeviceManagerKey)).toMap());
     // read devices file from user settings path
     QList<IDevice::Ptr> userDevices;
