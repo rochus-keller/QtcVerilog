@@ -1,0 +1,12 @@
+{
+    \"Name\" : \"QtcTools\",
+    \"Version\" : \"3.6.1\",
+    \"CompatVersion\" : \"3.6.1\",
+    \"Vendor\" : \"Rochus Keller\",
+    \"Copyright\" : \"The Qt Company Ltd, Rochus Keller\",
+    \"License\" : \"LGPL\",
+    \"Description\" : \"Provides support code for build systems.\",
+    \"Url\" : \"https://github.com/rochus-keller/QtcVerilog\",
+    $$dependencyList
+}
+

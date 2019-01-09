@@ -11,6 +11,7 @@ SUBDIRS   = \
 #    imageviewer \
 #    bookmarks \  # check
      projectexplorer \
+     qtctools \
 #    vcsbase \ # check
 #    perforce \
 #    subversion \

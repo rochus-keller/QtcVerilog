@@ -1,0 +1,13 @@
+#ifndef QTCTOOLS_GLOBAL_H
+#define QTCTOOLS_GLOBAL_H
+
+#include <QtGlobal>
+
+#if defined(QTCTOOLS_LIBRARY)
+#  define QTCTOOLSSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define QTCTOOLSSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // QTCTOOLS_GLOBAL_H
+
