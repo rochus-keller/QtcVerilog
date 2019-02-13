@@ -33,7 +33,7 @@ Follow these steps if you want to build QtcVerilog yourself:
 1. Download the QtcVerilog source code from https://github.com/rochus-keller/QtcVerilog/archive/master.zip and unpack it to the BUILD_DIR; rename the subdirectory to "QtcVerilog".
 1. Goto the BUILD_DIR/QtcVerilog subdirectory and execute `QTDIR/bin/qmake -r` (see the Qt documentation concerning QTDIR).
 1. Run make; after a couple of minutes the application is compiled to the bin, lib and libexec subdirectories.
-1. Build the VerilogCreator plugin (see https://github.com/rochus-keller/VerilogCreator for information); when successfully built you can delete the src subdirectory from BUILD_DIR/QtcVerilog.
+1. Build the VerilogCreator plugin (see https://github.com/rochus-keller/VerilogCreator for information); when successfully built you can delete the src subdirectory from BUILD_DIR/QtcVerilog. Note that the share subdirectory is needed at runtime and should not be deleted.
 1. Start QtcVerilog from the bin subdirectory.
 
 Instead of using qmake and make you can open QtcVerilog.pro using QtCreator and build it there.
