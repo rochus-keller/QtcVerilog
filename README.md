@@ -18,6 +18,7 @@ Linux: http://software.rochus-keller.info/QtcVerilog_linux_i386.tar.gz
 
 The Linux version does not include the Qt binaries. It was compiled on Ubuntu 14.04 LTS i386 using Qt 5.4.2. If you have a Qt version >= 5.4 installed on your system the binaries should work. Otherwise either find out which libraries are missing (e.g. using ldd) and install them; you can also build QtcVerilog yourself (see below).
 
+Here is a precompiled version for Linux x86_64 provided by [sunnyrains](https://github.com/sunnyrains): https://github.com/rochus-keller/VerilogCreator/files/4430691/WORKINGQTCV.tar.gz
 
 Windows: http://software.rochus-keller.info/QtcVerilog_win32.zip
 
