@@ -1,4 +1,4 @@
-![icon](http://software.rochus-keller.info/VerilogCreator_100.png)
+![icon](http://software.rochus-keller.ch/VerilogCreator_100.png)
 ## Welcome to QtcVerilog 
 
 QtcVerilog is a stand-alone Verilog IDE featuring the [VerilogCreator](https://github.com/rochus-keller/VerilogCreator) plugin. The primary purpose of QtcVerilog is to simplify the deployment of VerilogCreator and to avoid compatibility issues with QtCreator's unstable plugin API.
@@ -8,21 +8,21 @@ QtcVerilog is a subset of [QtCreator 3.6.1](https://download.qt.io/official_rele
 QtcVerilog is further developed here independently of its original repository. The first published version of QtcVerilog is 3.6.2; it will never reach version 4.0.0. The original QtCreator 3.6.1 was the last available version of the 3.x series before the Qt Company switched to QtCreator 4.x.
 
 
-![screenshot](http://software.rochus-keller.info/VlCreator_screenshot2.png "VerilogCreator Screenshot")
+![screenshot](http://software.rochus-keller.ch/VlCreator_screenshot2.png "VerilogCreator Screenshot")
 
 ### Binary Versions
 
 Current binary versions can be downloaded from here. The binary versions are delivered as ZIP (Windows), TAR.GZ (Linux) or DMG (Macintosh) files which can be easily downloaded and unpacked without the need to run an installer. The VerilogCreator plugin is included.
 
-Linux: http://software.rochus-keller.info/QtcVerilog_linux_i386.tar.gz
+Linux: http://software.rochus-keller.ch/QtcVerilog_linux_i386.tar.gz
 
 The Linux version does not include the Qt binaries. It was compiled on Ubuntu 14.04 LTS i386 using Qt 5.4.2. If you have a Qt version >= 5.4 installed on your system the binaries should work. Otherwise either find out which libraries are missing (e.g. using ldd) and install them; you can also build QtcVerilog yourself (see below).
 
 Here is a precompiled version for Linux x86_64 provided by [sunnyrains](https://github.com/sunnyrains): https://github.com/rochus-keller/VerilogCreator/files/4430691/WORKINGQTCV.tar.gz
 
-Windows: http://software.rochus-keller.info/QtcVerilog_win32.zip
+Windows: http://software.rochus-keller.ch/QtcVerilog_win32.zip
 
-Mac: http://software.rochus-keller.info/QtcVerilog_mac_x86_64.dmg
+Mac: http://software.rochus-keller.ch/QtcVerilog_mac_x86_64.dmg
 
 The Windows and Mac versions include a copy of the Qt libraries. 
 
